@@ -8,8 +8,8 @@ $(document).ready(function () {
          url: 'http://localhost:8081/solution',
          datatype: 'json',
          type: 'post',
+         data: JSON.stringify({"A": a, "B": b, "C": c}),
          contentType: 'application/json',
-         data:  { A: a, B: b, C: c},
          success: function (data) {
              var solution = document.getElementById("square_solution");
              solution.innerHTML = data;

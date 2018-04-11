@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
+import java.util.List;
 import java.util.logging.Logger;
 
 import static java.util.logging.Level.INFO;
@@ -17,9 +19,10 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
 
+        String as =req.getParameter("A");
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
-        MyClass myClass = gson.fromJson(req.getParameter("json"), MyClass.class);
+        MyClass myClass = gson.fromJson(req.getParameter("coeff"), MyClass.class);
         double a = myClass.A;
         double b = myClass.B;
         double c = myClass.C;
