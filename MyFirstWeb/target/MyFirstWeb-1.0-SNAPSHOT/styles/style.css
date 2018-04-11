@@ -1,0 +1,21 @@
+h4{
+    font-style: normal;
+    font-weight: bolder;
+    font-size: medium;
+    text-align: center;
+}
+form{
+    margin: 0 auto;
+    width:350px;
+}
+.field{
+    background-color: bisque;
+    border-color: darkorange;
+}
+.button {
+    background-color: gold;
+    border-color: darkorange;
+}
+html{
+    background-color: blanchedalmond;
+}
