@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="styles/style.css" rel="stylesheet">
     <title>Quadratic Equation</title>
     <script src="Solution.js"></script>
 </head>
 <body>
 <h4>Решение квадратного уравнения: Ax^2 + Bx + C = 0</h4>
-<form name="table">
+<form name="table" action="#">
     A <input class="field" name="A" type="text" value="1" size="4" title="Введите коээфициент А"pattern="^[1-9][0-9]?(\.[0-9]+)?">
     B <input class="field" name="B" type="text" value="2" size="4" title="Введите коээфициент В" pattern="[0-9]+(\.[0-9]+)?">
     C <input class="field" name="C" type="text" value="1" size="4" title="Введите коээфициент С" pattern="[0-9]+(\.[0-9]+)?">
-    <input class="button" type="button" value="РЕШЕНИЕ" title="нажми", onclick="square_solution()">
+    <input class="button" type="submit" value="РЕШЕНИЕ" title="нажми">
 </form>
 <h4 id="square_solution">Введите коэффициенты и нажмите РЕШЕНИЕ</h4>
 </body>
