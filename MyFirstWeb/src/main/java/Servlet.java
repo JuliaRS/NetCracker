@@ -1,4 +1,6 @@
 
+import jdk.nashorn.internal.objects.NativeJSON;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,8 +40,8 @@ public class Servlet extends HttpServlet {
                 str.append("x2 = " + solution2);
             }
         }
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-        out.println("<h4>"+str+"</h4>");
+        resp.setContentType("application/json");
+        PrintWriter out = resp.getWriter(); // здесь надо отправить json!!!
+        out.println();
     }
 }
