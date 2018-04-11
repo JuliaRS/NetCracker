@@ -1,5 +1,7 @@
 
-import jdk.nashorn.internal.objects.NativeJSON;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -7,17 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Logger;
+
+import static java.util.logging.Level.INFO;
 
 public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        String sA =req.getParameter("A");
-        double a = Double.parseDouble(sA);
-        String sB =req.getParameter("B");
-        double b = Double.parseDouble(sB);
-        String sC =req.getParameter("C");
-        double c = Double.parseDouble(sC);
+
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        Gson gson = gsonBuilder.create();
+        MyClass myClass = gson.fromJson(req.getParameter("json"), MyClass.class);
+        double a = myClass.A;
+        double b = myClass.B;
+        double c = myClass.C;
 
         double D = b * b - 4 * a * c;
         StringBuffer str=new StringBuffer();
