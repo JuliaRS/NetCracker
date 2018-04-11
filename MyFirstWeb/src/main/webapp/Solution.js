@@ -1,4 +1,4 @@
- function square_solution() {
+$(document).ready(function () {
     var a = document.table.A.value;
     var b = document.table.B.value;
     var c = document.table.C.value;
