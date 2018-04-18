@@ -9,17 +9,17 @@ form{
     width:350px;
 }
 .field{
-    background-color: bisque;
-    border-color: darkorange;
+    background-color: white;
+    border-color: #9edfff;
 }
 button {
-    background-color: gold;
-    border-color: darkorange;
+    background-color: white;
+    border-color: #9edfff;
 }
 html{
-    background-color: blanchedalmond;
+    background-color: aliceblue;
 }
-table {
+.table {
     width: 100%;
     margin: 50px auto;
     font: 14px Arial;
@@ -33,9 +33,9 @@ table th,
 table td {
     padding: 5px;
 }
-table tbody tr:nth-child(odd){ /* Задаем стили для нечетных рядов таблицы */
+table tbody tr:nth-child(odd){
     background: #fff;
 }
-table tbody tr:nth-child(even){ /* Задаем стили для четных рядов таблицы */
+table tbody tr:nth-child(even){
     background: #f2f6f8;
 }

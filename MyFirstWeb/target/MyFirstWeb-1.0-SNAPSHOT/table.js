@@ -7,7 +7,7 @@ var table = {
         if (rowData) {
             var lastRow = $('<tr/>').appendTo($('#table').find('tbody:last'));
             $.each(rowData, function (colIndex, c) {
-                lastRow.append($('<td />').text(c));
+                lastRow.append($('<td/>').text(c));
             });
             rowData.number = this.length;
             this.length++;
@@ -32,7 +32,7 @@ var table = {
                     result += locationEquation[1] + 'x' + (Math.sign(locationEquation[2]) === -1 ? '' : ' + ');
                     result += locationEquation[2];
 
-                    return { number: i, equation: result, root_1: JSON.parse(localStorage.getItem(i)).answer[0], root_2: JSON.parse(localStorage.getItem(i)).answer[1] };
+                    return { number: i, equation: result, solution: JSON.parse(localStorage.getItem(i)).answer };
                 }
             }
         };
@@ -66,13 +66,12 @@ var table = {
 
 $('#table').ready(function () {
     table.loadData();
-
-
-    $('#table tr').click(function () {
-        var index = parseInt($(this).find("td:first").html());
+    $('table tr').on( "click",function(event){
+        var index = parseInt($(this).find('td:first').html());
+        console.log(index);
         if ((index || index === 0) && (index >= 0 && index <= table.length)) {
             table.deleteFromLocalStorage(index);
             $(this).remove();
         }
-    });
+    })
 });
