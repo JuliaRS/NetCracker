@@ -19,3 +19,23 @@ button {
 html{
     background-color: blanchedalmond;
 }
+table {
+    width: 100%;
+    margin: 50px auto;
+    font: 14px Arial;
+    text-align: left;
+    table-layout: fixed;
+}
+table th {
+    background: #9edfff;
+}
+table th,
+table td {
+    padding: 5px;
+}
+table tbody tr:nth-child(odd){ /* Задаем стили для нечетных рядов таблицы */
+    background: #fff;
+}
+table tbody tr:nth-child(even){ /* Задаем стили для четных рядов таблицы */
+    background: #f2f6f8;
+}
