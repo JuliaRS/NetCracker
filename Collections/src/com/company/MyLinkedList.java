@@ -88,15 +88,34 @@ public class MyLinkedList<E> implements ILinkedList {
 
     @Override
     public Object remove(int index) {
-        if (index>size) return;
+        if (index>size) return null;
         int i=1;
-        Node node =head;
-        while()
+        Node node =head,
+            previousNode = null;
+        while(i!=index){
+            previousNode = node;
+            node = node.getNextNode();
+            i++;
+        }
+        previousNode.setNextNode(node.getNextNode());
+        size --;
+        return node.getElement();
     }
 
     @Override
     public Object set(int index, Object element) {
-        return null;
+        if (index>size) return null;
+        int i=1;
+        Node node =head,
+                previousNode = null;
+        while(i!=index){
+            previousNode = node;
+            node = node.getNextNode();
+            i++;
+        }
+        Node newNode = new Node(element,node);
+        previousNode.setNextNode(newNode);
+        return element;
     }
 
     @Override
@@ -106,7 +125,14 @@ public class MyLinkedList<E> implements ILinkedList {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        Object array[] = new Object[size];
+        Node node = head;
+        for(int i=0;i<size;i++)
+        {
+            array[i] = node.getElement();
+            node = node.getNextNode();
+        }
+        return array;
     }
 
     @Override
