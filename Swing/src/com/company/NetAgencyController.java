@@ -26,8 +26,8 @@ public class NetAgencyController {
         return tc;
     }
 
-    private AgencyFactory agencyFactory;
-    private ContactFactory contactFactory;
+    private AgencyFactory agencyFactory = new AgencyFactory();
+    private ContactFactory contactFactory = new ContactFactory();
     private final ContactType tc[];
     public NetAgencyController() {
         tc = new ContactType[]{ContactType.info, ContactType.buying, ContactType.service, ContactType.buying, ContactType.compliance};

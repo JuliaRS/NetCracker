@@ -106,8 +106,8 @@ public class Swing extends JFrame {
         JFormattedTextField t4;
         NumberFormat inf;
         inf = NumberFormat.getIntegerInstance();
-        inf.setMinimumIntegerDigits(20);
-        inf.setMaximumFractionDigits(0);
+        inf.setMinimumIntegerDigits(0);
+        inf.setMaximumFractionDigits(20);
         t4 = new JFormattedTextField(inf);
         TextField t1 = new TextField(),t2=new TextField(), t3 = new TextField();
         for(int i=0;i<8;i++){
